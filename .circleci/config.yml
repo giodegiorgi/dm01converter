@@ -39,7 +39,11 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
         
       # run tests!
-      - run: gradle test
+      - run: gradle build
+
+      # store artifacts
+      - store_artifacts:
+          path: ~/repo/build/libs/
 
 
 
